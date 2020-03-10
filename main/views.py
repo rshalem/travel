@@ -26,10 +26,12 @@ def state_detail(request, state_id):
     city = state.cities.all()
     return render(request, 'main/state_detail.html', {'city': city})
 
-# def city_detail(request, city_id):
-#     all_city = City.objects.get(pk=city_id)
-#     p = all_city.places.all()
-#     return render(request, 'main/city_detail.html', {'p': p})
+# def city_detail(request,state_id):
+#     all_city = City.objects.filter(state__pk=state_id)
+#     for m in all_city:
+#         all_places = Place.objects.filter(city__city_title=m.city_title)
+#
+#         return render(request,'main/city_detail.html', {'all_places': all_places})
 
 def sign_up(request):
 

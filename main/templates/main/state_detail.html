@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+
+      {% for cit in city %}
+        <div class="card" style="width: 20rem; height: 30rem">
+
+            <img class="card-img-top" src={{ cit.city_image.url}} alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"> {{ cit.city_title}} </p>
+                    <p class="card-text"> {{ cit.city_about }} </p>
+                </div>
+
+                <div class="card-body">
+                    <p class="animated fadeInUp" style=""> <a href="#" class="card-link"> Explore </a> </p>
+                </div>
+
+        </div>
+      {% endfor %}
+
+{% endblock %}

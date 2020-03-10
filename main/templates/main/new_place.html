@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="col-md-5">
+            <!--make a 2 column of 6-->
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="text-left"> Sign Up </h3>
+                </div>
+            </div>
+
+            <hr>
+            <!-- make another column for textbox and label-->
+            <div class="row">
+                <label class="label col-md-2 control-label"> Place title </label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" name="title" placeholder="Place name">
+                </div>
+
+            </div>
+
+            <div class="row">
+                <label class="label col-md-2 control-label"> Place About </label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" name="about" placeholder="Place about">
+                </div>
+
+            </div>
+
+            <div class="row">
+                <label class="label col-md-2 control-label"> Select City </label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" name="city" placeholder="City">
+                </div>
+
+            </div>
+
+            <button class="btn btn-primary btn-lg" type="submit" name="action"> Add </button>
+
+        </div>
+    </form>
+{% endblock %}

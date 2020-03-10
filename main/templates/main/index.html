@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+
+
+      {% for state in all_states %}
+          <div class="card-deck">
+              <div class="card">
+                <img class="card-img-top" src="{{ state.state_image.url}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{ state.state_title }} </h5>
+                  <p class="card-text">{{ state.state_about }}</p>
+                </div>
+                <div class="card-footer">
+                  <p class="animated fadeInUp" style="animation-delay: 0.1s"> <a href="{% url 'main:state_detail' state_id=state.id %}" class="card-link"> Explore </a> </p>
+                </div>
+              </div>
+          </div>
+
+      {% endfor %}
+
+{% endblock %}

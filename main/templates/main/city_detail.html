@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+
+      {% for single_place in all_places %}
+        <div class="card" style="width: 20rem; height: 30rem">
+
+            <img class="card-img-top" src={{ single_place.place_image.url}} alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"> {{ single_place.place_title}} </p>
+                    <p class="card-text"> {{ single_place.place_about }} </p>
+                </div>
+
+                <div class="card-body">
+                    <p class="animated fadeInUp" style="animation-delay: 0.1s"> <a href="#" class="card-link"> Explore </a> </p>
+                </div>
+
+        </div>
+      {% endfor %}
+
+{% endblock %}
