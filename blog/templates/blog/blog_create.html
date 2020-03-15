@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+
+    <br>
+    <br>
+    <br>
+
+    <form action="{% url 'blog:create-blog' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- as paragraph to make username password displayed in individual rows-->
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">Register </button>
+
+    </form>
+
+    If you have an don't have an account please Sign Up <a href="{% url 'main:sign_up' %}"><strong>Sign Up</strong></a> instead.
+
+
+{% endblock %}

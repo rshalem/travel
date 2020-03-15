@@ -134,7 +134,35 @@ body{
 }
 
 
+/* For Blog App */
+/* Header/Blog Title */
+.header {
+  padding: 50px;
+  font-size: 40px;
+  text-align: left;
+  background: skyblue;
+}
 
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: aliceblue;
+  padding: 20px;
+  margin-top: 20px;
+}
 
 
 

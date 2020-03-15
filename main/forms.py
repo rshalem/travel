@@ -1,4 +1,4 @@
-# from django.forms import forms
+# from django import forms
 # from .models import *
 #
 #
@@ -6,4 +6,4 @@
 #     class Meta:
 #         title = forms.CharField(max_length=100)
 #         about = forms.CharField(widget=forms.Textarea)
-#         city = models.ModelChoiceField(queryset=City.objects.all())
+#         city = forms.ModelChoiceField(queryset=City.objects.all())

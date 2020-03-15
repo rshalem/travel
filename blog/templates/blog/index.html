@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+    <div class="header">
+      <h2> Blogs </h2>
+    </div>
+
+    {% for article in all_article %}
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+          <h2>{{ article.article_title }}</h2>
+          <h6>Blogger: {{ article.user }}</h6>
+          <h5>{{ article.date_published }}</h5>
+          <div class="fakeimg" style="height:200px;">Image</div>
+          <p>{{ article.snippet }}</p>
+          <a href="{% url 'blog:detail-blog' article.slug %}"> Read More </a>
+        </div>
+
+      </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}
