@@ -16,6 +16,8 @@
           <div class="fakeimg" style="height:200px;">Image</div>
           <p>{{ article.snippet }}</p>
           <a href="{% url 'blog:detail-blog' article.slug %}"> Read More </a>
+          <a href="{% url 'blog:edit-blog' article.slug %}"> Edit </a>
+          <a href="{% url 'blog:delete-blog' article.slug %}"> Delete </a>
         </div>
 
       </div>

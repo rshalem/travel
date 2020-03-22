@@ -2,12 +2,14 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login,authenticate, logout
 from django.contrib import messages
+#from django.contrib.auth.decorators import login_required
 from .models import City,State, Place
-#from .forms import PlaceForm
+
 
 
 
 # homepage view, it will show all the states
+
 
 def homepage(request):
     return render(request, 'main/home.html', context=None)

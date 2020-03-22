@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+
+    <br>
+    <br>
+    <br>
+
+    <p>Are you sure you want to delete {{ blog.article_title }}? </p>
+
+    <form action="{% url 'blog:delete-blog' blog.slug %}" method="POST">
+        {% csrf_token %}
+        <button class="btn waves-effect waves-light" type="submit" name="Confirm"> Delete </button>
+
+    <a href="{% url 'blog:index' %}"><strong> Cancel </strong></a>
+
+    </form>
+
+{% endblock %}
