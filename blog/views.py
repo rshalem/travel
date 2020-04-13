@@ -2,11 +2,7 @@ from blog.models import Article
 from blog.forms import BlogCreate
 from django.contrib import messages
 from django.shortcuts import render, redirect
-
-
-
-
-# blog homepage
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -35,17 +31,16 @@ from django.shortcuts import render, redirect
 #
 #     return render(request, 'blog/blog_create.html', {'form': form})
 
+@login_required(login_url="/login/")
 def create_blog(request):
     if request.method == 'POST':
-        form = BlogCreate(request.POST)
+        form = BlogCreate(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
             return redirect('blog:index')
-
         else:
             messages.info(request, 'Invalid Entry')
             return redirect('blog:create_blog')
-
     else:
         form = BlogCreate()
 
@@ -57,12 +52,9 @@ def index(request):
     return render(request, 'blog/index.html', {'all_article': all_article})
 
 
-
-
 def blog_detail(request, slug):
     single_blog = Article.objects.get(slug=slug)
     return render(request, 'blog/blog_detail.html', {'single_blog': single_blog})
-
 
 
 def blog_edit(request, slug):

@@ -83,7 +83,13 @@ def log_in(request):
 
         if user is not None:
             login(request, user)
-            return redirect('main:homepage')
+
+            # if POST data contains next parameter in it, then redirect to that value that next has ie ?next= value
+
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
+            else:
+                return redirect('main:homepage')
 
         else:
             messages.info(request, 'Invalid Credentials')
