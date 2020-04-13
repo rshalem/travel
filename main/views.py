@@ -88,6 +88,10 @@ def log_in(request):
 
             if 'next' in request.POST:
                 return redirect(request.POST.get('next'))
+
+            elif 'next-value' in request.POST:
+                return redirect(request.POST.get('next-value'))
+
             else:
                 return redirect('main:homepage')
 

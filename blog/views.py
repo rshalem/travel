@@ -56,7 +56,7 @@ def blog_detail(request, slug):
     single_blog = Article.objects.get(slug=slug)
     return render(request, 'blog/blog_detail.html', {'single_blog': single_blog})
 
-
+@login_required(login_url="/login/")
 def blog_edit(request, slug):
     blog = Article.objects.get(slug=slug)
 

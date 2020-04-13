@@ -11,7 +11,11 @@
         {% csrf_token %}
         {{ form.as_p }}  <!-- as paragraph to make username password displayed in individual rows-->
 
-        <button class="btn waves-effect waves-light" type="submit" name="action">Upload </button>
+        <!-- to get the 'next' querystring from the url through GET in request-->
+        {% if request.GET.next %}
+            <input type="hidden" name="next-value" value="{{ request.GET.next }}">
+        {% endif %}
+        <button class="btn waves-effect waves-light" type="submit" name="action"> Upload </button>
 
     </form>
 

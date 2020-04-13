@@ -32,7 +32,8 @@
 
             </div>
 
-            <!-- to check if next querystring is present in the GET request, from the url, if present we r getting it-->
+            <!-- to check if next querystring is present in the GET request, from the url, if present we r getting it
+            next inside "if" & next inside "name" are different -->
             {% if request.GET.next %}
                 <input type="hidden" name="next" value="{{ request.GET.next }}">
             {% endif %}
