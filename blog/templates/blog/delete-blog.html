@@ -11,6 +11,12 @@
 
     <form action="{% url 'blog:delete-blog' blog.slug %}" method="POST">
         {% csrf_token %}
+
+        <!-- checking if next parameter is present in the request-->
+        {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}">
+        {% endif %}
+
         <button class="btn waves-effect waves-light" type="submit" name="Confirm"> Delete </button>
 
     <a href="{% url 'blog:index' %}"><strong> Cancel </strong></a>

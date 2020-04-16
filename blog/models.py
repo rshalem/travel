@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 
+# User class
 
 class Article(models.Model):
     article_image = models.ImageField(upload_to='images/', blank=True)
