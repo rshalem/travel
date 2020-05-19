@@ -13,7 +13,7 @@ urlpatterns = [
     path('explore/', views.explore, name='explore'),
     path('explore/<int:state_id>', views.state_detail, name='state_detail'),
 
-    #path('<int:state_id>', views.city_detail, name= 'city_detail'),
+    path('explore/place/<int:state_id>', views.city_detail, name= 'city_detail'),
     #url(r'^explore/(?P<state_id>[0-9]+)/(?P<s_id>[0-9]+)/$', views.city_detail, name='city_detail'),
 
     path('sign-up/', views.sign_up, name='sign_up'),

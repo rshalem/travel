@@ -2,8 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login,authenticate, logout
 from django.contrib import messages
-#from django.contrib.auth.decorators import login_required
-from .models import City,State, Place
+from .models import City, State, Place
 
 
 
@@ -28,12 +27,10 @@ def state_detail(request, state_id):
     city = state.cities.all()
     return render(request, 'main/state_detail.html', {'city': city})
 
-# def city_detail(request,state_id):
-#     all_city = City.objects.filter(state__pk=state_id)
-#     for m in all_city:
-#         all_places = Place.objects.filter(city__city_title=m.city_title)
-#
-#         return render(request,'main/city_detail.html', {'all_places': all_places})
+def city_detail(request,state_id):
+    all_place = Place.objects.filter(city__state__id=state_id)
+
+    return render(request, 'main/city_detail.html', {'all_places': all_place})
 
 def sign_up(request):
 

@@ -23,9 +23,9 @@ def create_blog(request):
         if form.is_valid():
             form.save()
             return redirect('blog:index')
-        else:
-            messages.info(request, 'Invalid Entry')
-            return redirect('blog:create_blog')
+
+        messages.info(request, 'Invalid Entry')
+        return redirect('blog:create_blog')
     else:
         form = BlogCreate()
 
